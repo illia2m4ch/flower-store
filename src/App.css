@@ -56,6 +56,10 @@ body {
   text-decoration: none;
 }
 
+.menu-item:hover {
+  color: #666666;
+}
+
 .menu-item-active {
   display: flex;
   align-items: center;
