@@ -1,22 +1,58 @@
 import React from 'react';
 import './App.css';
 import Main from "./components/page/main/Main";
+import {BrowserRouter, Link, NavLink, Route, Routes} from "react-router-dom";
+import Catalog from "./components/page/catalog/Catalog";
+import Contacts from "./components/page/contacts/Contacts";
+
+const routes = [
+    {
+        path: "/",
+        element: <Main/>,
+        title: "Главная"
+    },
+    {
+        path: "/catalog",
+        element: <Catalog/>,
+        title: "Каталог"
+    },
+    {
+        path: "/contacts",
+        element: <Contacts/>,
+        title: "Контакты"
+    }
+]
 
 function App() {
   return (
-      <div className="page-container">
-          <header className="header-container">
-              <div className="header-logo"><p><b>cvetok</b></p></div>
-              <nav className="menu-container">
-                  <a className="menu-item menu-item-active">Главная</a>
-                  <a className="menu-item">Каталог</a>
-                  <a className="menu-item">Контакты</a>
-              </nav>
-          </header>
-          <div className="tab-container">
-              <Main/>
+      <BrowserRouter>
+          <div className="page-container">
+              <header className="header-container">
+                  <div className="header-logo"><p><b>cvetok</b></p></div>
+                  <nav className="menu-container">
+                      {
+                          routes.map(route => (
+                              <NavLink
+                                  to={route.path}
+                                  className={({ isActive }) => isActive ? "menu-item-active" : "menu-item"}
+                              >
+                                  {route.title}
+                              </NavLink>
+                          ))
+                      }
+                  </nav>
+              </header>
+              <div className="tab-container">
+                  <Routes>
+                      {
+                          routes.map(route => (
+                              <Route path={route.path} element={route.element}/>
+                          ))
+                      }
+                  </Routes>
+              </div>
           </div>
-      </div>
+      </BrowserRouter>
   );
 }
 
