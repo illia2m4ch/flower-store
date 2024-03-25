@@ -1,0 +1,22 @@
+.slider-container {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+}
+
+.slider-item {
+    flex-shrink: 0;
+    background-color: #ff4747;
+    width: 300px;
+    height: 200px;
+    padding: 16px;
+}
+
+.slider-item:first-child {
+    margin-left: 32px;
+}
+
+.slider-item:last-child {
+    margin-right: 32px;
+}
