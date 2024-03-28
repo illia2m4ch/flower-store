@@ -7,17 +7,17 @@ import Contacts from "./components/page/contacts/Contacts";
 
 const routes = [
     {
-        path: "/",
+        path: "/flower-store",
         element: <Main/>,
         title: "Главная"
     },
     {
-        path: "/catalog",
+        path: "/flower-store/catalog",
         element: <Catalog/>,
         title: "Каталог"
     },
     {
-        path: "/contacts",
+        path: "/flower-store/contacts",
         element: <Contacts/>,
         title: "Контакты"
     }
