@@ -2,14 +2,25 @@ import './Main.css'
 
 const weeklySales = [
     {
-        title: "Хризантемы"
+        name: "Розы",
+        image: "https://kvetku.by/image/cache/catalog/Flowers/pionovidnye-rozy/buket-cvetov-44-652x652.jpg"
     },
     {
-        title: "Розы"
+        name: "Пионы",
+        image: "https://kvetku.by/image/cache/catalog/Flowers/pionovidnye-rozy/buket-cvetov-44-652x652.jpg"
     },
     {
-        title: "Пионы"
-    }
+        name: "Гипсофилы",
+        image: "https://kvetku.by/image/cache/catalog/Flowers/pionovidnye-rozy/buket-cvetov-44-652x652.jpg"
+    },
+    {
+        name: "Ромашки",
+        image: "https://kvetku.by/image/cache/catalog/Flowers/pionovidnye-rozy/buket-cvetov-44-652x652.jpg"
+    },
+    {
+        name: "Герберы",
+        image: "https://kvetku.by/image/cache/catalog/Flowers/pionovidnye-rozy/buket-cvetov-44-652x652.jpg"
+    },
 ]
 
 function Main() {
@@ -24,7 +35,10 @@ function Main() {
                 {
                     weeklySales.map(item => (
                         <div className="slider-item">
-                            <p>{item.title}</p>
+                            <div className="slider-item-image-container">
+                                <img src={item.image} className="slider-item-image"/>
+                            </div>
+                            <p className="slider-item-title">{item.name}</p>
                         </div>
                     ))
                 }

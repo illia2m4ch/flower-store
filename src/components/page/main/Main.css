@@ -7,10 +7,11 @@
 
 .slider-item {
     flex-shrink: 0;
-    background-color: #ff4747;
+    background-color: var(--surface-bg-color);
     width: 300px;
-    height: 200px;
-    padding: 16px;
+    border-radius: var(--corner-radius);
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .slider-item:first-child {
@@ -19,4 +20,25 @@
 
 .slider-item:last-child {
     margin-right: 32px;
+}
+
+.slider-item-image-container {
+    overflow: hidden;
+    width: 100%;
+    height: 180px;
+}
+
+.slider-item-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: transform .3s;
+}
+
+.slider-item:hover .slider-item-image {
+    transform: scale(1.1);
+}
+
+.slider-item-title {
+    padding: 16px;
 }
