@@ -1,11 +1,12 @@
 :root {
-  --accent-color: #5FBB97;
-  --bg-color: #ffffff;
-  --surface-bg-color: #ebedf3;
+  --accent-color: #007F73;
+  --bg-color: white;
+  --surface-bg-color: #f5f5f5;
   --text-color: #222222;
   --text-color-secondary: #999999;
 
   --divider-size: 1px;
+  --corner-radius: 8px;
 }
 
 body {
@@ -32,6 +33,7 @@ body {
 .header-container {
   min-height: 64px;
   display: flex;
+  background-color: var(--surface-bg-color);
   align-items: center;
   padding: 0 32px;
   font-size: 16px;
@@ -40,6 +42,7 @@ body {
 .header-logo {
   flex-grow: 1;
   font-size: 24px;
+  color: var(--accent-color);
 }
 
 .menu-container {
@@ -73,7 +76,6 @@ body {
   display: flex;
   flex: 1;
   overflow-y: hidden;
-  background-color: var(--surface-bg-color);
 }
 
 .tab-content {
@@ -101,7 +103,26 @@ body {
   padding-bottom: 8px;
 }
 
+p {
+  font-size: 18px;
+}
+
 .text-body {
   font-size: 18px;
   max-width: 800px;
+}
+
+input{
+  border: none;
+  outline: none;
+  display: inline-block;
+  position: relative;
+  height: 48px;
+  width:320px;
+  vertical-align: middle;
+  border-radius: var(--corner-radius);
+  box-sizing: border-box;
+  padding:0 16px;
+  font-size: 18px;
+  background-color: var(--surface-bg-color);
 }
