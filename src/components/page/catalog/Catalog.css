@@ -1,6 +1,6 @@
 .catalog-container {
     display: grid;
-    gap: 32px;
+    gap: var(--page-horizontal-indent);
     grid-template-columns: repeat(3, auto);
     margin-top: 24px;
 }
@@ -44,5 +44,5 @@
 }
 
 .catalog-item-title {
-    padding: 16px;
+    padding: var(--indent-2);
 }

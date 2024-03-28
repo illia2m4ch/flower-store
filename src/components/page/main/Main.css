@@ -1,3 +1,8 @@
+.slider-section-header {
+    padding-left: var(--page-horizontal-indent);
+    padding-right: var(--page-horizontal-indent);
+}
+
 .slider-container {
     width: 100%;
     display: flex;
@@ -15,11 +20,11 @@
 }
 
 .slider-item:first-child {
-    margin-left: 32px;
+    margin-left: var(--page-horizontal-indent);
 }
 
 .slider-item:last-child {
-    margin-right: 32px;
+    margin-right: var(--page-horizontal-indent);
 }
 
 .slider-item-image-container {
@@ -40,5 +45,5 @@
 }
 
 .slider-item-title {
-    padding: 16px;
+    padding: var(--indent-2);
 }

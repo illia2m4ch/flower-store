@@ -27,6 +27,15 @@ function App() {
   return (
       <BrowserRouter>
           <div className="page-container">
+              <div className="tab-container">
+                  <Routes>
+                      {
+                          routes.map(route => (
+                              <Route path={route.path} element={route.element}/>
+                          ))
+                      }
+                  </Routes>
+              </div>
               <header className="header-container">
                   <div className="header-logo"><p><b>cvetok</b></p></div>
                   <nav className="menu-container">
@@ -42,15 +51,6 @@ function App() {
                       }
                   </nav>
               </header>
-              <div className="tab-container">
-                  <Routes>
-                      {
-                          routes.map(route => (
-                              <Route path={route.path} element={route.element}/>
-                          ))
-                      }
-                  </Routes>
-              </div>
           </div>
       </BrowserRouter>
   );
