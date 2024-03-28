@@ -1,23 +1,23 @@
 import React from 'react';
 import './App.css';
 import Main from "./components/page/main/Main";
-import {BrowserRouter, Link, NavLink, Route, Routes} from "react-router-dom";
+import {BrowserRouter, NavLink, Route, Routes} from "react-router-dom";
 import Catalog from "./components/page/catalog/Catalog";
 import Contacts from "./components/page/contacts/Contacts";
 
 const routes = [
     {
-        path: "/flower-store",
+        path: "/",
         element: <Main/>,
         title: "Главная"
     },
     {
-        path: "/flower-store/catalog",
+        path: "/catalog",
         element: <Catalog/>,
         title: "Каталог"
     },
     {
-        path: "/flower-store/contacts",
+        path: "/contacts",
         element: <Contacts/>,
         title: "Контакты"
     }
@@ -31,7 +31,7 @@ function App() {
                   <Routes>
                       {
                           routes.map(route => (
-                              <Route path={route.path} element={route.element}/>
+                              <Route path={`/flower-store${route.path}`} element={route.element}/>
                           ))
                       }
                   </Routes>
@@ -42,7 +42,8 @@ function App() {
                       {
                           routes.map(route => (
                               <NavLink
-                                  to={route.path}
+                                  to={`/flower-store${route.path}`}
+                                  end={true}
                                   className={({ isActive }) => isActive ? "menu-item-active" : "menu-item"}
                               >
                                   {route.title}
