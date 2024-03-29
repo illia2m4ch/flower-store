@@ -1,7 +1,8 @@
 .catalog-container {
     display: grid;
     gap: var(--page-horizontal-indent);
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 1fr);
+    column-count: 3;
     margin-top: 24px;
 }
 

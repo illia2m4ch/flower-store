@@ -1,6 +1,7 @@
 import "./Catalog.css"
+import {useState} from "react";
 
-const items = [
+const initItems = [
     {
         name: "Розы",
         image: "https://kvetku.by/image/cache/catalog/Flowers/pionovidnye-rozy/buket-cvetov-44-652x652.jpg"
@@ -44,10 +45,27 @@ const items = [
 ]
 
 function Catalog() {
+    const [search, setSearch] = useState('');
+    const [items, setItems] = useState(initItems)
+
+    const handleSearch = (event: { target: { value: string; }; }) => {
+        let search = event.target.value
+        setSearch(search)
+        setItems(
+            initItems.filter(value =>
+                value.name.toLowerCase().includes(search.toLowerCase())
+            )
+        )
+    }
+
     return <div className="tab-content">
         <section className="tab-section">
             <p className="text-page-header">Каталог</p>
-            <input placeholder="Поиск" />
+            <input
+                value={search}
+                onChange={handleSearch}
+                placeholder="Поиск"
+            />
             <div className="catalog-container">
                 {
                     items.map(item => (
